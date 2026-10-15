@@ -34,6 +34,9 @@ header.scrolled{box-shadow:0 6px 18px rgba(0,0,0,.6)}
 /* 8 fotos */
 .car img,.shots img{transition:filter .3s}
 .car figure:hover img,.shots figure:hover img{filter:brightness(1.15)}
+/* formas de pagamento */
+.chips li{transition:transform .2s,box-shadow .2s}
+.chips li:hover{transform:translateY(-3px);box-shadow:0 6px 14px rgba(0,0,0,.5)}
 /* 9 WhatsApp flutuante */
 .fab{animation:ring 2.4s ease-out 1.5s 3}
 /* 10 status aberto */

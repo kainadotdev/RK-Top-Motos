@@ -1,0 +1,31 @@
+/* Serviços da oficina — 3 colunas (desktop), 2 (tablet), accordion (celular) */
+#servicos h2{margin-bottom:.9rem}
+.svcs{display:grid;gap:.7rem}
+.svc{border:1px solid var(--line);border-radius:8px;background:#1c1c1f;overflow:hidden}
+.svc>h3{margin:0}
+.svc-h{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:100%;min-height:56px;padding:.5rem 1rem;border:0;background:none;color:var(--red-hi);font:italic 700 1.45rem/1.1 "Barlow Condensed","Arial Narrow",Impact,sans-serif;text-align:left;cursor:pointer}
+.svc-h::after{content:"";flex:none;width:36px;height:36px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/20px no-repeat;transition:transform .3s ease}
+.svc.open .svc-h::after{transform:rotate(180deg)}
+.svc-h:focus-visible{outline:3px solid #fff;outline-offset:-3px}
+.svc-b{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.svc.open .svc-b{grid-template-rows:1fr}
+.svc-b .in{min-height:0;overflow:hidden;visibility:hidden;padding:0 1rem;transition:visibility 0s .3s}
+.svc.open .svc-b .in{visibility:visible;transition-delay:0s}
+.svc li{padding:.5rem 0;border:0;border-bottom:1px solid rgba(255,255,255,.12);font-size:1.05rem}
+.svc .btn{width:100%;margin:1rem 0}
+@media(min-width:761px){
+  .svcs{grid-template-columns:repeat(2,1fr);gap:1rem}
+  .svc{display:flex;flex-direction:column}
+  .svc:nth-child(3){grid-column:1/-1}
+  .svc-h{min-height:0;padding:.9rem 1rem .4rem;cursor:default;pointer-events:none}
+  .svc-h::after{display:none}
+  .svc-b{display:flex;flex:1;transition:none}
+  .svc-b .in{display:flex;flex-direction:column;flex:1;overflow:visible;visibility:visible}
+  .svc .plain{flex:1}
+  .svc li{padding:.4rem 0;font-size:.97rem}
+  .svc .btn{margin:.9rem 0 1rem}
+}
+@media(min-width:1024px){
+  .svcs{grid-template-columns:repeat(3,1fr)}
+  .svc:nth-child(3){grid-column:auto}
+}
