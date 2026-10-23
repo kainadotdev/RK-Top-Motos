@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rktopmotos.com.br/sitemap.xml
